@@ -1,15 +1,13 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from sentence_transformers import SentenceTransformer
-import numpy as np
 from openai import OpenAI
+from difflib import SequenceMatcher
+import re
 
 app = FastAPI(
     title="Smart Library Semantic Search",
     version="1.0.0"
 )
-
-model = SentenceTransformer("all-MiniLM-L6-v2")
 
 client = OpenAI()
 
@@ -33,6 +31,39 @@ def home():
     }
 
 
+def tokenize(text):
+    return set(
+        re.findall(
+            r"[a-zA-Z0-9]+",
+            str(text).lower()
+        )
+    )
+
+
+def calculate_similarity(query, text):
+    query_words = tokenize(query)
+    text_words = tokenize(text)
+
+    if not query_words or not text_words:
+        return 0.0
+
+    common_words = query_words.intersection(text_words)
+
+    keyword_score = len(common_words) / len(query_words)
+
+    sequence_score = SequenceMatcher(
+        None,
+        query.lower(),
+        text.lower()
+    ).ratio()
+
+    return round(
+        (keyword_score * 0.75) +
+        (sequence_score * 0.25),
+        4
+    )
+
+
 @app.post("/semantic-search")
 def semantic_search(request: SearchRequest):
 
@@ -50,11 +81,6 @@ def semantic_search(request: SearchRequest):
             "results": []
         }
 
-    query_embedding = model.encode(
-        query,
-        normalize_embeddings=True
-    )
-
     results = []
 
     for book in request.books:
@@ -66,18 +92,14 @@ def semantic_search(request: SearchRequest):
             str(book.get("description") or "")
         ])
 
-        book_embedding = model.encode(
-            text,
-            normalize_embeddings=True
-        )
-
-        score = float(
-            np.dot(query_embedding, book_embedding)
+        score = calculate_similarity(
+            query,
+            text
         )
 
         results.append({
             "book": book,
-            "similarityScore": round(score, 4)
+            "similarityScore": score
         })
 
     results.sort(
