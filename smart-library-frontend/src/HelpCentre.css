@@ -1,0 +1,376 @@
+.help-centre-page {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.help-hero {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 28px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #ede9fe, #e0f2fe);
+    margin-bottom: 24px;
+}
+
+.help-hero-icon {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #7c3aed;
+    color: white;
+}
+
+.help-eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #7c3aed;
+}
+
+.help-hero h1 {
+    margin: 5px 0 6px;
+    font-size: 30px;
+    color: #111827;
+}
+
+.help-hero p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.help-search-box {
+    height: 58px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 18px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+    margin-bottom: 20px;
+}
+
+.help-search-box svg {
+    color: #7c3aed;
+    flex-shrink: 0;
+}
+
+.help-search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #111827;
+    background: transparent;
+}
+
+.help-search-box input::placeholder {
+    color: #94a3b8;
+}
+
+.help-search-box button {
+    border: none;
+    background: #f3f4f6;
+    color: #475569;
+    padding: 7px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.help-search-box button:hover {
+    background: #e5e7eb;
+}
+
+.help-categories {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.help-category {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    color: #475569;
+    padding: 10px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.help-category:hover {
+    border-color: #a78bfa;
+    color: #7c3aed;
+}
+
+.help-category.active {
+    background: #7c3aed;
+    color: white;
+    border-color: #7c3aed;
+}
+
+.quick-help-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 35px;
+}
+
+.quick-help-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    transition: 0.2s;
+}
+
+.quick-help-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
+}
+
+.quick-help-card > svg {
+    color: #7c3aed;
+    flex-shrink: 0;
+}
+
+.quick-help-card h3 {
+    margin: 0 0 5px;
+    font-size: 15px;
+    color: #111827;
+}
+
+.quick-help-card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #64748b;
+}
+
+.faq-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.faq-header h2 {
+    margin: 5px 0 0;
+    font-size: 22px;
+    color: #111827;
+}
+
+.faq-count {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.faq-item {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+.faq-item.open {
+    border-color: #c4b5fd;
+    box-shadow: 0 7px 20px rgba(124, 58, 237, 0.08);
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 20px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-question:hover {
+    background: #fafafa;
+}
+
+.faq-question h3 {
+    margin: 5px 0 0;
+    font-size: 15px;
+    color: #1e293b;
+}
+
+.faq-category {
+    font-size: 10px;
+    font-weight: 800;
+    color: #7c3aed;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.faq-chevron {
+    color: #64748b;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.faq-chevron.rotated {
+    transform: rotate(180deg);
+    color: #7c3aed;
+}
+
+.faq-answer {
+    padding: 0 20px 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.faq-answer p {
+    margin: 15px 0 0;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.no-faqs {
+    text-align: center;
+    padding: 50px 20px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    color: #64748b;
+}
+
+.no-faqs svg {
+    color: #a78bfa;
+}
+
+.no-faqs h3 {
+    color: #1e293b;
+    margin: 12px 0 5px;
+}
+
+.no-faqs p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.ask-librarian-card {
+    margin-top: 35px;
+    padding: 24px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(135deg, #f5f3ff, #eff6ff);
+    border: 1px solid #ddd6fe;
+}
+
+.ask-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background: #7c3aed;
+    color: white;
+}
+
+.ask-content {
+    flex: 1;
+}
+
+.ask-content h2 {
+    margin: 5px 0;
+    font-size: 20px;
+    color: #111827;
+}
+
+.ask-content p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.ask-librarian-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    background: #7c3aed;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 11px;
+    cursor: pointer;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.ask-librarian-button:hover {
+    background: #6d28d9;
+}
+
+@media (max-width: 800px) {
+    .help-centre-page {
+        padding: 20px;
+    }
+
+    .quick-help-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ask-librarian-card {
+        flex-wrap: wrap;
+    }
+
+    .ask-librarian-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .help-hero {
+        padding: 20px;
+    }
+
+    .help-hero-icon {
+        display: none;
+    }
+
+    .help-hero h1 {
+        font-size: 24px;
+    }
+
+    .faq-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
