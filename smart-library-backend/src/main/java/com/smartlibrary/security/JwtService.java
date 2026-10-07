@@ -1,4 +1,4 @@
-﻿package com.smartlibrary.security;
+package com.smartlibrary.security;
 
 import com.smartlibrary.entity.User;
 import io.jsonwebtoken.Claims;

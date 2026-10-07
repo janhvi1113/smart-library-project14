@@ -24,7 +24,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/ai")
-@CrossOrigin(origins = "http://localhost:5173")
+
 public class AIChatController {
 
     private final UserRepository userRepository;
@@ -253,9 +253,12 @@ System.out.println(json);
 System.out.println("===== END AI JSON =====");
            HttpURLConnection connection =
         (HttpURLConnection)
-                URI.create(
-                        "http://127.0.0.1:8000/ai-chat"
-                ).toURL().openConnection();
+               URI.create(
+        System.getenv().getOrDefault(
+                "AI_SERVICE_URL",
+                "http://127.0.0.1:8000"
+        ) + "/ai-chat"
+).toURL().openConnection();
 
 connection.setRequestMethod("POST");
 connection.setRequestProperty(

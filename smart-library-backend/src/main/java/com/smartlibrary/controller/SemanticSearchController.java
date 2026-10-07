@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/semantic-search")
-@CrossOrigin(origins = "http://localhost:5173")
+
 public class SemanticSearchController {
 
     private final SemanticSearchService semanticSearchService;

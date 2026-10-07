@@ -27,9 +27,11 @@ public class SemanticSearchService {
                 .version(HttpClient.Version.HTTP_1_1)
                 .build();
 
-    private final String semanticServiceUrl =
-            "http://127.0.0.1:8000/semantic-search";
-
+   private final String semanticServiceUrl =
+        System.getenv().getOrDefault(
+                "AI_SERVICE_URL",
+                "http://127.0.0.1:8000"
+        ) + "/semantic-search";
     public SemanticSearchService(
             BookRepository bookRepository,
             ObjectMapper objectMapper) {
