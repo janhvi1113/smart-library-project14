@@ -3,6 +3,10 @@
     {
       "source": "/api/:path*",
       "destination": "https://smart-library-backend-vbdd.onrender.com/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
