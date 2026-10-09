@@ -739,16 +739,26 @@
     border-radius: 13px;
   }
 
-  .book-cover-wrapper {
-    height: 140px !important;
-    min-height: 140px !important;
-    margin-bottom: 8px;
-  }
+ .book-cover-wrapper {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+}
 
-  .book-cover-image {
-    height: 140px !important;
-    max-height: 140px;
-  }
+.book-cover-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 10px;
+}
 
   .book-cover-fallback {
     height: 140px;
